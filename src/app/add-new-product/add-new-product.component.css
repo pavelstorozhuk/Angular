@@ -1,0 +1,13 @@
+.add-new-product {
+    width: 750px;
+    height: auto;
+    margin: 20px 20px;
+    float:left;
+    background: #FFFFFF;
+    box-shadow: 1px 2px 3px 0px rgba(0,0,0,0.10);
+    border-radius: 6px;
+   
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+  }

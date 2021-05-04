@@ -1,0 +1,40 @@
+<div class="add-new-product">
+    <div>
+        <b>Add new product</b>
+    </div>
+    <div class="panel panel-default">
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" (keyup)="onProductNameKeyUp($event)" placeholder="ProductName" aria-label="ProductName"
+                aria-describedby="basic-addon1">
+        </div>
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" (keyup) ="onDescriptionKeyUp($event)" placeholder="Description" aria-label="description"
+                aria-describedby="basic-addon1">
+        </div>
+
+        <div class="form-group">
+            <label for="category">Category</label>
+            <select class="form-control" id="category" #select (change)="onCategoryChange(select.value)">
+                <option value="Mobile phones">Mobile phones</option>
+                <option value="Laptops">Laptops</option>
+                <option value="Watches">Watches</option>
+            </select>
+        </div>
+
+        <div class="input-group mb-3">
+            <input type="number" class="form-control"  (keyup) ="onPriceKeyUp($event)" placeholder="Product price" aria-label="Product price" id='price'
+                aria-describedby="basic-addon1">
+        </div>
+
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="isAvailable" (change) ='onIsAvaialbeChanged($event)'>
+            <label class="form-check-label" for="flexCheckChecked">
+                is Available
+            </label>
+        </div>
+
+
+        <button type="button" (click) = "onAddNewProductClick()" class="btn btn-primary">Add new product</button>
+
+    </div>
+</div>

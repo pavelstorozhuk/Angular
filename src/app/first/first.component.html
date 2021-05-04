@@ -1,0 +1,21 @@
+
+
+
+  
+
+<h1>First component</h1>
+<div class="panel panel-default">
+    <p>Name {{name}}</p>
+    <p>description = {{description}}</p>
+    <p>category = {{category}}</p>
+    <p>price = {{price}}</p>
+    <p>IsAvaiable = {{isAvailable}}</p>
+    
+    <h3>Categories</h3>
+    <ul>
+        <li *ngFor="let category of categories">
+          {{category}}
+        </li>
+      </ul>
+</div>
+

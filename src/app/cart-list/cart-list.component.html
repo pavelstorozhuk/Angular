@@ -1,0 +1,39 @@
+
+<div class="shopping-cart">
+    <div *ngIf="cartService.products.length   then productsExists; else productsDoesNotExist">cart-list works!</div>
+</div>
+
+<ng-template #productsExists>
+    <div>
+        Shopping Bag
+    </div>
+  
+      <h1>Cart List</h1>
+      <table>
+          <tr>
+              <th>Name</th>
+              <th>Description</th>
+              <th>Category</th>
+              <th>Price</th>
+              <th>isAvailable</th>
+          </tr>
+          <tr *ngFor="let product of cartService.products">
+              <td>{{product?.name}} </td>
+              <td>{{product?.description}} </td>
+              <td>{{product?.category}}  </td>
+              <td>{{product?.price}} </td>
+              <td>{{product?.isAvailable}}</td>
+          </tr>
+      </table>
+  
+</ng-template>
+
+<ng-template #productsDoesNotExist>
+    <div class="title">
+        Shopping Bag
+      </div>
+    <h1>Cart is empty </h1>
+</ng-template>
+
+
+
