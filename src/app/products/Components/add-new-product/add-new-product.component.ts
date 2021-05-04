@@ -1,6 +1,6 @@
 import { Component, OnInit, EventEmitter, Output } from '@angular/core';
-import { Category } from '../category.enam';
-import { Product } from '../product.model';
+import { Category } from '../../Models/category.enam';
+import { Product } from '../../Models/product.model';
 
 @Component({
   selector: 'app-add-new-product',
@@ -11,18 +11,18 @@ export class AddNewProductComponent implements OnInit {
 
   @Output()
   addProduct: EventEmitter<Product> = new EventEmitter<Product>();
-  productName: string = '';
-  description: string = '';
-  price: number = 0;
-  category:string = '';
-  isAvailable: boolean = false;
+  productName = '';
+  description = '';
+  price = 0;
+  category = '';
+  isAvailable = false;
   constructor() { }
 
   ngOnInit(): void {
   }
 
   onAddNewProductClick(): void {
-    let product = new Product(this.productName, this.description, <Category>this.category, this.price, this.isAvailable);
+    const product = new Product(this.productName, this.description, this.category as Category, this.price, this.isAvailable);
     this.addProduct.emit(product);
   }
   onProductNameKeyUp($event: any): void{
@@ -33,16 +33,16 @@ export class AddNewProductComponent implements OnInit {
     this. description = $event.target.value;
   }
 
-  
+
   onPriceKeyUp($event: any): void{
     this.price = $event.target.value;
   }
 
-  onCategoryChange(value : any): void{
+  onCategoryChange(value: any): void{
     this.category = value;
   }
 
-  onIsAvaialbeChanged($event :any): void {
+  onIsAvaialbeChanged($event: any): void {
     this.isAvailable = $event.target.checked;
   }
 }

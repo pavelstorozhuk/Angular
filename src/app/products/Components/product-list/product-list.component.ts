@@ -1,6 +1,6 @@
-import { Component, OnInit,EventEmitter,Output  } from '@angular/core';
-import { Product } from '../product.model';
-import { ProductService } from '../product.service';
+import { Component, OnInit, EventEmitter, Output  } from '@angular/core';
+import { Product } from '../../Models/product.model';
+import { ProductService } from '../../Services/ProductService/product.service';
 
 @Component({
   selector: 'app-product-list',
@@ -10,7 +10,7 @@ import { ProductService } from '../product.service';
 export class ProductListComponent implements OnInit {
 
   products: Array<Product> = [];
- 
+
   constructor(private productService: ProductService) { }
 
   ngOnInit(): void {
@@ -18,7 +18,7 @@ export class ProductListComponent implements OnInit {
 
   }
 
-  onAddNewProduct(product : Product): void{
+  onAddNewProduct(product: Product): void{
     this.products.push(product);
   }
   trackByProducts(index: number, product: Product): string {
