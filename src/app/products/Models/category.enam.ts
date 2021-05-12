@@ -3,4 +3,4 @@ export enum Category {
     Laptops = 'Laptops',
     Watches = 'Watches'
   }
-
+// В названии файла изменить enam => enum

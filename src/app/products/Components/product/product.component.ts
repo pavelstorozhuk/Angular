@@ -10,6 +10,9 @@ import { CartService } from '../../Services/CartService/cart.service';
 export class ProductComponent implements OnInit {
 
   @Input() product: Product | undefined;
+
+  // желательно не использовать тут зависимость, а создавать уатпут для родительского компонента
+  // компонент без зависимостей более простой, чем с зависимостями
   constructor(private cartService: CartService) {
 
   }
@@ -20,7 +23,7 @@ export class ProductComponent implements OnInit {
   onBuyClick(): void {
     if (this.product) {
       console.log(`product ${this.product.name} has been added to Cart`);
-      this.cartService.AddProduct(this.product);
+      this.cartService.addProduct(this.product);
     }
   }
 }

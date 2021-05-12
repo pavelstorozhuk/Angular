@@ -22,9 +22,12 @@ export class AddNewProductComponent implements OnInit {
   }
 
   onAddNewProductClick(): void {
+    // тут нет проверки, вводил ли пользователь что-то или нет, а значит можно создать пустые модели
     const product = new Product(this.productName, this.description, this.category as Category, this.price, this.isAvailable);
     this.addProduct.emit(product);
   }
+
+  // пока такой подход - ок, но позже лучше использовать ngModel или реактивную форму
   onProductNameKeyUp($event: any): void{
     this.productName = $event.target.value;
   }
