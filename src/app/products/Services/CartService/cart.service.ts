@@ -9,7 +9,8 @@ export class CartService {
   products: Array<Product> = [];
   constructor() { }
 
-  AddProduct(product: Product): void{
+  // для методов используется первая буква в нижнем регистре
+  addProduct(product: Product): void{
       this.products.push(product);
   }
 }
