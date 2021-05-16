@@ -1,0 +1,11 @@
+
+    <td >{{product?.productName}} </td>
+    <td >{{product?.productsCount}} </td>
+    <td >{{product?.productPrice}} </td>
+    <td >{{product?.getWholePrice()}} </td>
+    <td> <button class="btn btn-light" (click)="onIncreaseProductCountClick()">+</button> </td>
+    <td> <button class ="btn btn-light" (click)="onDecreaseProductCountClick()">-</button> </td>
+    <td> <button class="btn btn-danger" (click)="onRemoveProductsClick()">Remove</button> </td> 
+
+
+    

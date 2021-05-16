@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Category } from '../products/Models/category.enam';
+import { Category } from '../../products/models/category.enum';
 
 @Component({
   selector: 'app-first',

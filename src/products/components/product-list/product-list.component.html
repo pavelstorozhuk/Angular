@@ -1,0 +1,22 @@
+<h1>Product list</h1>
+<div class="product-list">
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Category</th>
+            <th>Price</th>
+            <th>IsAvailable</th>
+            <th></th>
+        </tr>
+        <tr app-product *ngFor="let product of products trackBy: trackByProducts" [product]="product"
+            (buyProduct)="onBuyClick($event)">
+
+        </tr>
+    </table>
+</div>
+<!-- <app-product *ngFor="let product of products trackBy: trackByProducts" [product]="product" (buyProduct) ="onBuyClick($event)">
+    </app-product> -->
+<div>
+    <app-add-new-product (addProduct)="onAddNewProduct($event)"> </app-add-new-product>
+</div>

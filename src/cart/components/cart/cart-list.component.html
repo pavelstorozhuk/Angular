@@ -1,0 +1,40 @@
+<div [ngClass]="'shopping-cart'">
+    <div *ngIf="cartService.getProductsInformation().length   then productsExists; else productsDoesNotExist"></div>
+</div>
+
+
+<ng-template #productsExists>
+    <div [ngStyle]="{'font-family':'Segoe Print'}"appHighlight>
+        Shopping Bag
+    </div>
+
+  
+   <h1 [ngStyle]="{'font-family':'Segoe Print'}" appHighlight>Cart List</h1>
+    <table>
+        <tr appHighlight>
+            <th>Name</th>
+            <th>Count</th>
+            <th>Price</th>
+            <th>Whole Price</th>
+            <th></th>
+            <th></th>
+            <th></th>
+        </tr>
+        <tr  app-cart-item *ngFor="let product of cartService.getProductsInformation()" [product]="product"
+            (increaseProductCount)="increaseProductCount($event)" (decreaseProductCount)="decreaseProductCount($event)"
+            (removeProducts)="removeProducts($event)" >
+        </tr>
+        <tr appHighlight>
+            <td>Whole Price:</td>
+            <td>{{getWholePrice()}}</td>
+        </tr>
+    </table> 
+
+</ng-template>
+
+<ng-template #productsDoesNotExist>
+    <div [ngStyle]="{'font-family':'Segoe Print'}" class="title">
+        Shopping Bag
+    </div>
+    <h1 [ngStyle]="{'font-family':'Segoe Print'}">Cart is empty </h1>
+</ng-template>

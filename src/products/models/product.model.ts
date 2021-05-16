@@ -1,5 +1,5 @@
 
-import {Category} from './category.enam';
+import {Category} from './category.enum';
 export class Product {
     constructor(
       public name: string,

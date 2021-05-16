@@ -1,6 +1,0 @@
-<h1>Product list</h1>
-<div class="panel panel-default">
-    <app-product *ngFor="let product of products trackBy: trackByProducts" [product]="product">
-    </app-product>
-    <app-add-new-product (addProduct)="onAddNewProduct($event)"> </app-add-new-product>
-</div>
