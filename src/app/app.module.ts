@@ -7,18 +7,21 @@ import { FirstComponent } from './first/first.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import {CartModule } from '../cart/cart.module';
 import {ProductsModule} from '../products/products.module';
+import {SharedModule} from '../shared/shared.module';
+
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    FirstComponent
+    FirstComponent,
   ],
   imports: [
     BrowserModule,
     NgbModule,
     CartModule,
-    ProductsModule
+    ProductsModule,
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]

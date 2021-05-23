@@ -15,10 +15,7 @@ export class CartListComponent implements OnInit {
   }
 
   getWholePrice(): number{
-    const productsInformation: Array<ProductsInformation> = this.cartService.getProductsInformation();
-    let price = 0;
-    productsInformation.forEach(item => price += (item.productPrice * item.productsCount));
-    return price;
+   return this.cartService.getWholePrice();
   }
 
   decreaseProductCount(productName: string): void {
