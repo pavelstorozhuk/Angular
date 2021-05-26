@@ -12,7 +12,7 @@ import {SharedModule} from '../shared/shared.module';
     CommonModule,
     SharedModule
   ],
-  providers: [CartService],
+  // providers: [CartService], // уже зарегистрирован
   exports: [CartListComponent]
 })
 export class CartModule { }
