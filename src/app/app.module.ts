@@ -27,3 +27,6 @@ import {SharedModule} from '../shared/shared.module';
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+// Почему папки
+// cart, orders, products, shared оказались за пределами папки app?

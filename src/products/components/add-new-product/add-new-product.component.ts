@@ -12,6 +12,8 @@ export class AddNewProductComponent implements OnInit {
   @Output()
   addProduct: EventEmitter<Product> = new EventEmitter<Product>();
 
+  // Думаю, тут было бы удобно использовать не набор свойств компонента,
+  // а создать одно свойство с типом модели и его свойства использовать на форме
   productName = '';
   description = '';
   price = 0;

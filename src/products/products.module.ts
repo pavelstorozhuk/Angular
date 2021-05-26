@@ -10,7 +10,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [AddNewProductComponent, ProductComponent, ProductListComponent],
-  providers: [ProductService],
+  // providers: [ProductService], // сервис уже зарегистрирован с помощью своего декоратора
   imports:
   [
     FormsModule,
